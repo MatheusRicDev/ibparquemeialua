@@ -1,69 +1,68 @@
 'use client';
 
+import { useState } from 'react';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-
-import {
-  PageContainer,
-  Main,
-  BackLink,
-  ArticleHeader,
-  PreTitle,
-  Title,
-  Intro,
-  Content,
-  Placeholder,
-} from './styles';
+import * as S from './styles';
+import { confessionArticles } from '@/data/confession';
 
 export default function OQueCremos() {
+  const [activeArticle, setActiveArticle] = useState('');
+
+  const handleMenuClick = (id: string) => {
+    setActiveArticle(id);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <PageContainer>
+    <S.PageContainer>
       <Header />
-      <Main>
-        <BackLink href="/">&larr; Voltar para a página inicial</BackLink>
-        
-        <ArticleHeader>
-          <PreTitle>Nossa Doutrina</PreTitle>
-          <Title>Confissão de Fé de New Hampshire</Title>
-          <Intro>
+      <S.BackLink href="/">&larr; Voltar para a página inicial</S.BackLink>
+      <S.Main>
+        <S.ArticleHeader>
+          <S.PreTitle>Nossa Doutrina</S.PreTitle>
+          <S.Title>Confissão de Fé de New Hampshire</S.Title>
+          <S.Intro>
             Adotada em 1833, esta declaração expressa os princípios 
             fundamentais da nossa fé baseados unicamente nas Escrituras Sagradas.
-          </Intro>
-        </ArticleHeader>
+          </S.Intro>
+        </S.ArticleHeader>
 
-        <Content>
-          <h2>I. Das Escrituras Sagradas</h2>
-          <p>
-            Cremos que a Bíblia Sagrada foi escrita por homens divinamente inspirados, e é 
-            um perfeito tesouro de instrução celestial; que tem Deus por seu autor, a 
-            salvação por seu fim, e a verdade, sem qualquer mistura de erro, por sua 
-            matéria; que ela revela os princípios pelos quais Deus nos julgará.
-          </p>
-          <span className="reference">2Tm 3:16-17; 2Pe 1:21; Pv 30:5-6</span>
+        <S.StickyNav>
+          <S.MenuTitle>Artigos</S.MenuTitle>
+          <S.MenuList>
+            {confessionArticles.map((article) => (
+              <S.MenuListItem key={article.id}>
+                <S.MenuLink
+                  href={`#${article.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleMenuClick(article.id);
+                  }}
+                  $isActive={activeArticle === article.id}
+                >
+                  {article.number}. {article.title}
+                </S.MenuLink>
+              </S.MenuListItem>
+            ))}
+          </S.MenuList>
+        </S.StickyNav>
 
-          <h2>II. Do Verdadeiro Deus</h2>
-          <p>
-            Cremos que há um, e somente um Deus vivo e verdadeiro, um Espírito infinito e 
-            inteligente, cujo nome é JEOVÁ, o Criador e Supremo Governador do céu e da terra; 
-            inexprimivelmente glorioso em santidade, e digno de toda possível honra, 
-            confiança e amor.
-          </p>
-          <span className="reference">Jo 4:24; Sl 147:5; Êx 15:11; Mc 12:30</span>
-
-          <h2>III. Da Queda do Homem</h2>
-          <p>
-            Cremos que o homem foi criado em santidade, sob a lei de seu Criador; mas pela 
-            transgressão voluntária, caiu daquele estado santo e feliz; em consequência 
-            do que toda a humanidade é agora pecadora.
-          </p>
-          <span className="reference">Gn 1:27; Gn 3:6-24; Rm 5:12</span>
-          
-          <Placeholder>
-            (Restante dos artigos será inserido posteriormente)
-          </Placeholder>
-        </Content>
-      </Main>
+        <S.Content>
+          {confessionArticles.map((article) => (
+            <S.Article key={article.id} id={article.id}>
+              <S.ArticleTitle>{article.number}. {article.title}</S.ArticleTitle>
+              <S.ArticleText>{article.text}</S.ArticleText>
+              <S.ArticleReference>{article.reference}</S.ArticleReference>
+            </S.Article>
+          ))}
+        </S.Content>
+      </S.Main>
       <Footer />
-    </PageContainer>
+    </S.PageContainer>
   );
 }

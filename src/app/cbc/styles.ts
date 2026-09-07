@@ -486,6 +486,6 @@ export const BackLink = styled(Link)`
   transition: ${({ theme }) => theme.transitions.default};
 
   &:hover {
-    color: ${({ theme }) => theme.colors.brand};
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;
