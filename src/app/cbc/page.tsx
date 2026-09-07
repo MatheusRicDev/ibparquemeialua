@@ -169,7 +169,7 @@ export default function CBCPage() {
           <CTAContainer>
             <CTATitle>{cbcInfo.ctaTitle}</CTATitle>
             <CTAText>{cbcInfo.ctaDescription}</CTAText>
-            <CTAButton href="#contato">{cbcInfo.ctaButton} &rarr;</CTAButton>
+            <CTAButton href="https://wa.me/5512991904568" target="_blank" rel="noopener noreferrer">{cbcInfo.ctaButton} &rarr;</CTAButton>
           </CTAContainer>
         </CTASection>
       </Main>
