@@ -30,7 +30,7 @@ export const TopSection = styled.div`
 
 export const LogoArea = styled.div`
   img {
-    height: 45px;
+    height: 60px;
     width: auto;
   }
 `;

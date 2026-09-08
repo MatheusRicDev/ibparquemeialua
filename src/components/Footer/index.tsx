@@ -17,7 +17,7 @@ export default function Footer() {
           </S.LogoArea>
           
           <S.Tagline>
-            Soli Deo Gloria &mdash; Só a Deus a glória
+            Soli Deo Gloria &mdash; Somente a Deus a glória
           </S.Tagline>
           
           <S.SocialLinks>

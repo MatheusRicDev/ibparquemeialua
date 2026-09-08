@@ -10,7 +10,7 @@ export const HeaderContainer = styled.header`
   width: 100%;
   background-color: ${({ theme }) =>
     theme.name === 'dark'
-      ? 'rgba(15, 23, 42, 0.95)'
+      ? 'rgba(32, 37, 31, 0.95)'
       : 'rgba(255, 255, 255, 0.95)'
   };
   backdrop-filter: blur(8px);
@@ -36,7 +36,7 @@ export const LogoArea = styled.div`
   cursor: pointer;
 
   img {
-    height: 65px;
+    height: 80px;
     width: auto;
   }
 `;

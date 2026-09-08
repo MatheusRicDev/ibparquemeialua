@@ -64,10 +64,10 @@ export const WelcomeText = styled.span`
 export const Title = styled.h1`
   font-size: 4.5rem;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.3;
   color: ${({ theme }) => theme.colors.brand};
   margin-bottom: ${({ theme }) => theme.spacing.md};
-  max-width: 500px;
+  max-width: 590px;
 
   span {
     color: ${({ theme }) => theme.colors.accent};
@@ -80,7 +80,7 @@ export const Title = styled.h1`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     max-width: 100%;
   }
 `;

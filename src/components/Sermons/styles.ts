@@ -17,7 +17,7 @@ export const Container = styled.div`
 
 export const Card = styled.div`
   background-color: ${({ theme }) =>
-    theme.name === 'dark' ? '#1e3a5f' : theme.colors.brand};
+    theme.name === 'dark' ? '#293329' : theme.colors.brand};
   border-radius: ${({ theme }) => theme.borderRadius.lg};
   display: grid;
   grid-template-columns: 1fr 1.4fr 1fr;
@@ -40,8 +40,8 @@ export const LeftPanel = styled.div`
   position: relative;
   background: ${({ theme }) =>
     theme.name === 'dark'
-      ? 'linear-gradient(135deg, #1e3a5f 0%, #0f2440 100%)'
-      : 'linear-gradient(135deg, rgba(0,51,102,1) 0%, rgba(0,35,70,1) 100%)'
+      ? 'linear-gradient(135deg, #293329 0%, #20251F 100%)'
+      : 'linear-gradient(135deg, #3F4B3D 0%, #293329 100%)'
   };
 
   &::after {
@@ -185,7 +185,7 @@ export const SermonMeta = styled.p`
 
 export const PlayButton = styled.a`
   background-color: ${({ theme }) => theme.colors.accent};
-  color: #0A2558;
+  color: #20251F;
   padding: 0.75rem 1.5rem;
   border-radius: ${({ theme }) => theme.borderRadius.full};
   font-weight: 600;

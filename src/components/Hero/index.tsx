@@ -9,7 +9,7 @@ export default function Hero() {
       <S.HeroContent>
         <S.WelcomeText>BEM-VINDO À</S.WelcomeText>
         <S.Title>
-          PIB Parque <span>Meia Lua</span>
+          Igreja Batista do <span>Parque Meia Lua</span>
         </S.Title>
         <S.Subtitle>
           Uma igreja que ama a Deus, as pessoas e vive o evangelho todos os dias.
